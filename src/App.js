@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Welcome from "./1_component/Welcome";
+import Home from "./BT_Homelayout/Home.jsx";
+import Shop from "./BT_shoplayout/Shop"
+import MSIlayout from "./BT_msi_layout/MSIlayout";
+import Databinding from "./2_Databiding/Databinding";
+import Conditionalrendering from "./3_ConditionalRendering/Conditionalrendering";
+import List from "./4_List/list";
+import Event from "./5_Event/event";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MSIlayout/>
     </div>
   );
 }
