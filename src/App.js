@@ -8,10 +8,12 @@ import List from "./4_List/list";
 import Event from "./5_Event/event";
 import State from './7_state/State'
 import Selectcar from "./selectcar/selectcar";
+import Props from "./8_Props/props";
+import Shoesshop from "./BT_ShoesShop/Shoesshop";
 function App() {
   return (
     <div className="App">
-      <Selectcar/>
+      <Shoesshop/>
     </div>
   );
 }
