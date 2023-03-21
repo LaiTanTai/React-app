@@ -10,7 +10,7 @@ function Home(){
             <div style={{textAlign:'center',position:'relative'}}>
                 <img src='./img/model.jpg' style={{width:'250px'}}></img>
                 <img src={image} className={style.glassesStyle}></img>
-                <div style={{marginTop:'30px'}}>
+                <div className='mt-5'>
                     <button style={{width:'90px',height:'80px'}} onClick={()=>{setimage("./img/v2.png")}}>
                             <img style={{maxWidth:"100%"}} src='./img/g2.jpg'></img>
                     </button>
