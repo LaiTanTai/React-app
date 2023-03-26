@@ -1,9 +1,9 @@
 import React from "react";
-import Home from "./BT2/Home";
+import Shoesstore from "./BT3/Shoesstore";
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <Shoesstore/>
     </div>
   );
 }
