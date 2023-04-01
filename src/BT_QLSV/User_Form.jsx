@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function User_Form({onSubmit,user}) {
     const [values,setValues] = useState({
-        name:user.name,
-        Email:user.Email,
-        Address:user.Address
+        name:"",
+        Email:"",
+        Address:"",
     })
+    useEffect(()=>{
+        setValues(user)
+    },[user])
     const handleChange = (evt) => {
         const { value, name } = evt.target;
         setValues({

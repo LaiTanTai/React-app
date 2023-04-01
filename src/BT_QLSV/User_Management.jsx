@@ -31,7 +31,7 @@ function User() {
       <div className='card'>
           <div className='card-header bg-dark text-white'>Users Form</div>
           <div className='card-body'>
-            <User_Form key={selectstate.id} onSubmit={handleSubmit} user={selectstate}/>
+            <User_Form onSubmit={handleSubmit} user={selectstate}/>
           </div>
       </div>
       <div className='mt-4'>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function User_Table({users,ondelete,onselect}) {
+function User_Table({users,ondelete,onselectuser}) {
   return (
     <table className='table'>
         <thead>
@@ -19,7 +19,7 @@ function User_Table({users,ondelete,onselect}) {
                     <td>{user.Email}</td>
                     <td>{user.Address}</td>
                     <td>
-                        <button className='btn btn-success mr-2' onClick={()=>onselect(user)}>Edit</button>
+                        <button className='btn btn-success mr-2' onClick={()=>onselectuser(user)}>Edit</button>
                         <button className='btn btn-danger' onClick={()=>ondelete(user.id)}>Delete</button>
                     </td>
                   </tr>  
