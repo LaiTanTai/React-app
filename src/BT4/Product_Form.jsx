@@ -7,6 +7,7 @@ function Product_Form({form_product,HandleSubmit}) {
         Image:"",
         Description:"",
         Price:"",
+        id:"",
     })
     useEffect(()=>{
         setproduct(form_product);
@@ -28,20 +29,20 @@ function Product_Form({form_product,HandleSubmit}) {
                 <input  className="form-control mt-2" value={product.Type} onChange={handleChange} name="Type"></input>
             </div>
             <div className="form-group">
-                <label >Description</label>
-                <input  className="form-control mt-2" value={product.Description} onChange={handleChange} name="Description"></input>
-            </div>
-            <div className="form-group">
                 <label >Image</label>
                 <input  className="form-control mt-2" value={product.Image} onChange={handleChange} name="Image"></input>
+            </div>
+            <div className="form-group">
+                <label >Description</label>
+                <input  className="form-control mt-2" value={product.Description} onChange={handleChange} name="Description"></input>
             </div>
             <div className="form-group">
                 <label >Price</label>
                 <input type="number" className="form-control mt-2" value={product.Price} onChange={handleChange} name="Price"></input>
             </div>
             <div className='form-group'>
-                <button className='btn btn-success mt-3' onClick={()=>HandleSubmit(product)}>Submit</button>
-                <button type='reset' className='btn btn-secondary mt-3 ms-2'>Reset</button>
+                <button type='button' className='btn btn-success mt-3' onClick={()=>HandleSubmit(product)}>Submit</button>
+                <button type='button' className='btn btn-secondary mt-3 ms-2' onClick={()=>{setproduct({Name:"",Type:"",Image:"",Description:"",Price:"",id:""})}}>Reset</button>
             </div>
         </form>
     </div>

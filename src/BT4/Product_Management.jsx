@@ -19,13 +19,17 @@ function Product_Management() {
         isLoading:false,
         error:null,
     });
+    const [search,setsearch] = useState("");
+    const handleSearch = (searchString)=>{
+        setsearch(searchString);
+    } 
     useEffect(()=>{
         fetchProduct();
-    },[])
+    },[search])
     const fetchProduct = async()=>{
         dispatch({type:"DATA_PENDING"});
         axios
-        .get("https://63e867afac3920ad5beba870.mockapi.io/api/Product_Management")
+        .get("https://63e867afac3920ad5beba870.mockapi.io/api/Product_Management",{params:{Name:search||undefined}})
         .then((res)=>{
             dispatch({type:"GET_DATA_SUCCESS",payload : res.data})
         })
@@ -37,12 +41,19 @@ function Product_Management() {
         try{
         await axios
         .delete(`https://63e867afac3920ad5beba870.mockapi.io/api/Product_Management/${productID}`)
-        fetchProduct();
+        await fetchProduct();
         }catch(error){
             console.log(error)
         }
     }
-    const [updateProduct,setupdateProduct] = useState({});
+    const [updateProduct,setupdateProduct] = useState({
+        Name:"",
+        Type:"",
+        Image:"",
+        Description:"",
+        Price:"",
+        id:"",
+    });
     const handleUpdate = (product)=>{
         console.log(product)
         setupdateProduct(product);
@@ -54,9 +65,17 @@ function Product_Management() {
             if(id){
                 await axios.put(`https://63e867afac3920ad5beba870.mockapi.io/api/Product_Management/${id}`,payload);
             }else{
-                await axios.post("https://63e867afac3920ad5beba870.mockapi.io/api/Product_Management",product)
+                await axios.post('https://63e867afac3920ad5beba870.mockapi.io/api/Product_Management',product);
             }
             fetchProduct();
+            setupdateProduct({
+                Name:"",
+                Type:"",
+                Image:"",
+                Description:"",
+                Price:"",
+                id:"",
+            })
         }catch(error){
             console.log(error);
         }
@@ -65,7 +84,7 @@ function Product_Management() {
     <div className='container-fluid'>
         <h1 className='text-center'>PRODUCT MANAGEMENT</h1>
         <Product_Form form_product={updateProduct} HandleSubmit={handleSubmit} />
-        <Product_Table data={state} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
+        <Product_Table data={state} handleDelete={handleDelete} handleUpdate={handleUpdate} onsubmit={handleSearch}/>
     </div>
   )
 }
