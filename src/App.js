@@ -13,10 +13,11 @@ import Effect from "./9_Effect/Effect";
 import Memo from "./10_Memo/Memo";
 import Ref from "./11_Ref/Ref";
 import Usereducer from "./12_Hooks/useReducer";
+import CustomHook from "./13_customHook/CustomHook";
 function App() {
   return (
     <div className="App">
-      <Usereducer/>
+      <CustomHook/>
     </div>
   );
 }
