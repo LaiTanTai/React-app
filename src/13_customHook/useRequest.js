@@ -5,5 +5,3 @@ function useRequest() {
     useEffect
   return data
 }
-
-export default useRequest

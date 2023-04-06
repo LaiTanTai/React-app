@@ -3,6 +3,7 @@ import { useState } from 'react'
 import useCounter from './useCounter';
 import axios from 'axios';
 import useWindowSize from './useWindowSize';
+import useRequest from './useRequest'
 function CustomHook() {
     // const [count , setcount] = useState(0);
     // const increase = ()=>useState(count++);
@@ -22,7 +23,6 @@ function CustomHook() {
         const {data} = await axios.get();
         return data;
     }
-    const {data} = useRequest(fetchData)
   return (
     <div>
     <h1>CustomHook</h1>
