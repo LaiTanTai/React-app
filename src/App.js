@@ -14,10 +14,12 @@ import Memo from "./10_Memo/Memo";
 import Ref from "./11_Ref/Ref";
 import Usereducer from "./12_Hooks/useReducer";
 import Redux from "./14_Redux/redux";
+import Baucua from "./BT_baucua/Baucua";
+import Redux_thunk from "./15_Redux-thunk/Redux_thunk";
 function App() {
   return (
     <div className="App">
-      <Redux/>
+      <Redux_thunk/>
     </div>
   );
 }
