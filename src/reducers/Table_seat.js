@@ -7,7 +7,7 @@ function Table_seatReducer(state = initState,action){
         case 'Seat/Booking':
             return {...state,isBooking:[...state.isBooking,action.payload]}
         case 'Seat/Booked':
-            return {...state,isBooked:[...state.isBooking],isBooking:[]}
+            return {...state,isBooked:[...state.isBooking,...state.isBooked],isBooking:[]}
         case 'Seat/delete':
             const newBooking = state.isBooking.filter((value)=>{
                 if(value !== action.payload){
